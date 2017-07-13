@@ -27,3 +27,12 @@
 
 ## constexpr修饰的指针变量会有什么效果
 @@ 会把指针定义成一个顶层const
+
+## typedef定义一个指针的类型
+@@ typedef int *int_p
+
+## 用using 定义类型别名
+@@ using intt = int;
+
+$$ 用decltype得到变量的类型
+
