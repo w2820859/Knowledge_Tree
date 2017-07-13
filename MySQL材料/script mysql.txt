@@ -1,0 +1,76 @@
+create database student;
+
+use student;
+
+create table StudentInfo(
+ID int,
+name char(15),
+sex int,
+grade int,
+major char(20),
+institute char(50),
+class int,
+dormitory int
+);
+
+insert into StudentInfo
+(ID,name,sex,grade,major,institute,class,dormitory) 
+values
+(1,'John',1,1,'cs','computer institution',1,1),
+(2,'Amy',0,1,'ee','electronic institution',2,2),
+(3,'David',1,1,'economy','economy and management institution',1,3),
+(4,'Michael',1,1,'management','economy and management institution',2,4),
+(5,'Mary',0,1,'math','science institution',1,1),
+(6,'Sunny',0,1,'physics','science institution',2,2),
+(7,'William',1,1,'english','foreign language institution',1,3),
+(8,'Paul',1,2,'cs','computer institution',2,4),
+(9,'Peter',1,2,'ee','electronic institution',1,1),
+(10,'Jessica',0,2,'economy','economy and management institution',2,2),
+(11,'Jennifer',0,2,'management','economy and management institution',1,3),
+(12,'Elizabeth',0,2,'math','science institution',2,4),
+(13,'Thomas',1,2,'physics','science institution',1,1),
+(14,'Lisa',0,2,'english','foreign language institution',2,2),
+(15,'Daniel',1,3,'cs','computer institution',1,3),
+(16,'Kevin',1,3,'ee','electronic institution',2,4),
+(17,'Angela',0,3,'economy','economy and management institution',1,1),
+(18,'Alice',0,3,'management','economy and management institution',2,2),
+(19,'Richard',1,3,'math','science institution',1,3),
+(20,'Linda',0,3,'physics','science institution',2,4),
+(21,'Jason',1,3,'english','foreign language institution',1,1);
+
+
+
+
+create table MajorCourse(
+cs char(50),
+ee char(50),
+economy char(50),
+management char(50),
+math char(50),
+physics char(50),
+english char(50)
+);
+
+create table CsMarksheet(
+ID int,
+advanced_mathematics int,
+operating_system int,
+constituent_of_computer int,
+data_structure int,
+data_base int,
+network int,
+AI int,
+CPP int,
+university_english int
+);
+
+create table EeMarksheet(
+advanced_mathematics int,
+CPP int,
+micro_electronics int,
+analog_eletronic int,
+digital_electronic int,
+quantum_mechanics int,
+microwave int,
+university_english int
+);

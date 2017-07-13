@@ -1,0 +1,9 @@
+@@ 计算程序运行时间
+## 
+<!--
+#include <sys/timeb.h> 
+timeb t1,t2;
+ftime(&t1);//获取时间
+t1.time;//秒精度
+t1.time*1000+t1.millitm;//毫秒精度
+-->

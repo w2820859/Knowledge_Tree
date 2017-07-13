@@ -1,0 +1,47 @@
+1,创建数据库
+CREATE DATABASE dbname;
+2,查看所有数据库
+show databases;
+3,选择要操作的数据库
+USE dbname;
+4,查看数据库中创建的所有数据表
+show tables;
+5,删除数据库
+drop database dbname;
+6,创建表
+CREATE TABLE tablename(column1 type constrains,column2 type constrains,column3 type constrains);
+7,查看表的定义
+DESC tablename;
+show ctreate table tablename \G;  除了基本信息，还可查询存储引擎和字符集信息
+8,删除表
+DROP TABLE tablename;
+9,修改表类型
+ALTER TABLE tablename MODIFY column_name tpye_to_be_changed [FIRST | AFTER col_name]; 
+10,增加表字段
+ALTER TABLE tablename ADD COLUMN new_column_name type [FIRST | AFTER col_name];
+11,删除表字段
+ALTER TABLE tablename DROP COLUMN column_name;
+12,字段改名
+ALTER TABLE tablename CHANGE COLUMN old_name new_name type [FIRST | AFTER col_name];
+13,表改名
+ALTER TABLE tablename RENAME new_name;
+14,插入记录
+INSERT INTO tablename(field_1,field_2,field_3) VALUES(value_1,value_2,value_3);
+或INSERT INTO  tablename VALUES(value_1,value_2,value_3);
+15,一次性插入多条记录
+INSERT INTO tablename (field_1,field_2,field_3) 
+VALUES
+(value_1-1,value_1-2,value_1-3),
+(value_2-1,value_2-2,value_2-3),
+(value_3-1,value_3-2,value_3-3);
+16,更新记录
+UPDATE tablename SET field_1=value_1,field_2=value_2,... WHERE CONDITION;
+17,同时更新多个表的记录
+UPDATE (tablename1) t1,(tablename) t2,... SET t1.field=value,t2.field=value WHERE CONDITION; 
+18,删除记录
+DELETE FROM tablename WHERE CONDITION;
+19,一次删除多个表的数据
+DELETE table_1,table_2 FROM table_1,table_2 where table_1.col=? and table_2.col=?;
+或 DELETE t1,t2 FROM table_1 t1,table_2 t2 where t1.col=? and t2.col=?;
+20,查询记录
+SELECT * FROM tablename WHERE

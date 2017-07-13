@@ -1,0 +1,56 @@
+初学阶段：
+1.进入Linux 下载Git
+2.初始化Git，
+git config --global user.name <My Name>
+git config –global user.email <My Email>
+或者在~/.gitconfig 文件中修改配置信息。
+该信息作为代码提交时身份识别。
+3.创建一个repository
+可以进入文件夹<A>，然后执行 git init ,会在文件夹A中创建 .Git 文件夹，A作为 
+Repository,也是working deirectory.
+也可以从Github上Clone一个，方法是git colne http:~,会把Clone 的目录保存在  当前目录下。
+4.把自己写的文件加入到Repository目录下，然后执行 git add <file neme>或<.>/*表示   添加全部文件*/  ，可以把文件添加到staging area ，/可以理解为一个缓存区，把修改过的代码或新的代码放进去，以备commit*/
+5.把staged area的文件commit可以执行 git commit –m “<备注>” ，表示将所有staging area的文件commit放进history，如果不加 –m “<备注>“，则会进入一个文本编辑器，添加备注，也可以使用 git commit  file_name  -m “<备注>” 选择commit staged area中的指定一个文件。
+6.查看git 当前状态，用git status 
+新添加进working directory的文件状态： 
+add 后的状态： 
+文件被修改后的状态： 
+这是比较working directory中文件与staging  area中文件对比的差异，staging area中的文件已经commit了，working directory中的文件被修改后，也可以查出这种状态，这时是working directory中的文件与history中文件的对比差异。
+查看git 状态还有一个更好的指令，git status –s 
+当添加一个文件的状态： 
+Add 后： 
+在第一个问好的位置为A
+Commit后，使用git status 则查询不到此文件
+如果修改这个文件： 
+后面问号的位置出现M,表示working directory与staging area中文件不同
+Add后： 
+前面问好位置变成M，表示staging area中的文件与history中的文件不同。
+此时修改working directory中的文件： 
+表示staging area中的文件与history 中的文件不同，同时working directory中的文件与staging area中的文件也不同。
+7.查看文件修改内容，使用git diff
+可以查看working directory与staging area文件的改动
+如果要查看working directory与history的文件改动，可以使用git diff HEAD <file name>指令
+如果要查看staging area 与history的文件改动，可以用git diff –staged <file name>
+如果要查看staging area 中文件与history 中文件的改动，可以用git diff –staged <file name>
+8.要撤销执行了add指令之后对staging area的修改，可以使用git reset <file name>
+/*即把staging area 中的文件恢复为history 中的版本*/
+  如果要撤销working directory里面的修改，可以用git checkout <file name>
+/*即把working directory 中的文件恢复为staging area中的版本*/
+ 如果要把working directory中的文件恢复到history中的版本，可以用git checkout  HEAD <filename>
+9.如果要把文件从working directory直接提交到history可以用指令 git commit –a –m  “<备注>”或git commit –am “<>”   /*使用条件是在history中存在该文件，并且使用时不能指定文件名*/
+10.如果要删除working directory里的一个文件/*这个文件得是已经commit过的文件*/，可以用git rm <fine name>指令
+/*说明：用此指令删除后将无法恢复*/
+此时文件已经消失，然后git commit –m ”<>”之后就可以更新状态。
+ 如果想保留working directory里面的文件，仅仅是删除history里的文件，可以用
+git rm –cached <file name>
+11.要修改文件名可以用指令 git mv <待修改的文件> <修改后的文件名>
+12.查看所有分支用 git branch
+      创建新的分支用 git branch <分支>
+      切换到分支用 git checkout <分支>
+      删除分支用 git branch –d <分支>
+     创建分支并切换到该分支 git checkout –b <分支>
+13.查看所有本地分支和远程分支用 git branch –a
+14.创建远程分支 git push origin HEAD:<branch>
+      删除远程分支 git push origin :<branch>
+     把当前分支push 到远端 git push origin <当前分支>:<远端分支>
+15.合并分支 ，首先进入一个分支，然后 git merge <要合并的分支>
