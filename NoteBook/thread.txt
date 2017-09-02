@@ -1,0 +1,5 @@
+创建线程函数的四个参数：线程ID变量引用，线程属性，线程入口函数，线程参数指针
+线程退出的三种方式：1,结束返回，2,调用pthread_exit(return_value_ptr)，3,被其他线程取消,调用pthread_cancel(thread_ID),不会等待，只是提出请求
+一个线程等待另一个线程结束的函数pthread_join(thread_ID,(output)return_value_ptr)
+分离的线程不能用pthread_join()等待结束，分离的线程的资源会在线程结束时立即回收，非分离的线程结束状态会一直保存到对该线程调用pthread_join()
+

@@ -1,0 +1,22 @@
+mutex：
+类型 pthread_mutex_t 
+初始化器 PTHREAD_MUTEX_INITIALIZER 或 pthread_mutex_init((output)mutex_ptr,attribute)
+
+死锁的产生：
+FunctionA lock mutexA , call FunctionB , FunctionB lock mutexA(wait FunctionA unlock mutexA)
+ThreadA lock mutexA , ThreadB lock mutexB , threadB lock mutexA(wait ThreadA unlock mutexA) , ThreadA lock mutexB(wait threadB unlock mutexB)
+
+读写锁：
+读写锁允许更高的并行性，有三种状态：读模式下加锁，写模式下加锁，不加锁
+当写锁加锁后，读模式和写模式加锁的行为都会被阻塞
+当读锁加锁后，读模式可加锁并得到访问权，但是写模式会被阻塞
+当读锁加锁后，有一个线程以写模式获取锁，读写锁则会阻塞随后的读模式的请求，这样可以避免读模式长期占用
+
+自旋锁：
+在获取锁之前一直处于忙等状态，而不是休眠状态
+
+屏障：
+等待多个线程任务完成
+类型 pthread_barrier_t
+初始化屏障 phtread_barrier_init(barrier_ptr,attribute,count)
+等待屏障 pthread_barrier_wait(barrier_ptr) 

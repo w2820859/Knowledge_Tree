@@ -1,0 +1,4 @@
+mutex和semaphore的差别：
+mutex 保证代码段不会被并行的运行
+semaphore 可以控制代码段并行的数量，用于控制并发量
+mutex一定要由获得锁的进程来释放，semaphore可以由其他进程释放

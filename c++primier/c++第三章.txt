@@ -1,0 +1,23 @@
+## 初始化string的几种方式
+@@ string s1; string s2(s1); string s3=s1; string s4("value"); string s5="value"; string s6(n,'c');
+
+## 使用getline读取一整行
+@@ getline(cin,str);
+
+## 为什么要定义size_type类型
+@@ 为了体现标准库类型与机器无关的特性
+
+## 基于范围的for语句怎么用
+@@ (auto,引用,数组,容器)
+
+## vector初始化的方法
+@@ 7种
+
+$$ 定义一个数组指针和数组引用
+
+## C风格字符串的函数
+@@ strlen(s); strcmp(p1,p2); strcat(p1,p2); strcpy(p1,p2);
+
+$$ 使用范围for语句处理多维数组
+
+## 用typedef定义一个数组类型
